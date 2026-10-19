@@ -1,0 +1,212 @@
+/* =========================================================
+   GLOBAL STYLES — Yismalem Awgichew Portfolio
+   ========================================================= */
+
+/* ----- Design Tokens ----- */
+:root {
+  /* Colors */
+  --color-bg:          #fff;
+  --color-bg-alt:      #f5f5f3;
+  --color-text:        #121211;
+  --color-text-sec:    #4a4a46;
+  --color-muted:       #8b8a84;
+  --color-border:      #d9d7d0;
+  --color-placeholder: #f0f0ee;
+
+  /* Typography */
+  --font-display: var(--font-sans);
+  --font-serif:   var(--font-sans);
+  --font-sans:    'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Type scale */
+  --text-xs:   0.6875rem;  /* 11px */
+  --text-sm:   0.8125rem;  /* 13px */
+  --text-base: 0.9375rem;  /* 15px */
+  --text-md:   1.0625rem;  /* 17px */
+  --text-lg:   1.25rem;    /* 20px */
+  --text-xl:   1.5rem;     /* 24px */
+  --text-2xl:  2rem;       /* 32px */
+  --text-3xl:  2.75rem;    /* 44px */
+  --text-4xl:  3.75rem;    /* 60px */
+  --text-5xl:  5rem;       /* 80px */
+  --text-heading: clamp(1.75rem, 4.56vw, 4.65rem); /* shared size for all page headings */
+  --text-h2:      clamp(1.25rem, 2vw, 1.75rem);  /* subtitles, ledes, large links */
+
+  /* Spacing */
+  --sp-1:  0.25rem;
+  --sp-2:  0.5rem;
+  --sp-3:  0.75rem;
+  --sp-4:  1rem;
+  --sp-5:  1.25rem;
+  --sp-6:  1.5rem;
+  --sp-8:  2rem;
+  --sp-10: 2.5rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-20: 5rem;
+  --sp-24: 6rem;
+  --sp-32: 8rem;
+
+  /* Layout */
+  --max-width:          1440px;
+  --header-height:      64px;
+  --side-pad:           3rem;   /* 80px desktop */
+  --side-pad-md:        2.5rem; /* 40px tablet */
+  --side-pad-sm:        1.25rem;/* 20px mobile */
+
+  /* Transitions */
+  --ease-fast:   150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-base:   250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-slow:   400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ----- Reset ----- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.65;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "cv11", "ss01";
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img, video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  padding: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ----- Skip link ----- */
+.skip-link {
+  position: fixed;
+  top: var(--sp-4);
+  left: var(--sp-4);
+  z-index: 9999;
+  padding: var(--sp-2) var(--sp-4);
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  transform: translateY(-200%);
+  transition: transform var(--ease-fast);
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* ----- Focus styles ----- */
+:focus-visible {
+  outline: 1.5px solid var(--color-text);
+  outline-offset: 3px;
+}
+
+/* ----- Utility ----- */
+.container {
+  width: 100%;
+  max-width: calc(var(--max-width) + var(--side-pad) * 2);
+  margin: 0 auto;
+  padding-left: var(--side-pad);
+  padding-right: var(--side-pad);
+}
+
+.label {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding-left: var(--side-pad-md);
+    padding-right: var(--side-pad-md);
+  }
+}
+@media (max-width: 640px) {
+  .container {
+    padding-left: var(--side-pad-sm);
+    padding-right: var(--side-pad-sm);
+  }
+}
+
+/* ----- Selection ----- */
+::selection { background: var(--color-text); color: var(--color-bg); }
+
+/* ----- Reveal on scroll ----- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 1s var(--ease-out), transform 1.1s var(--ease-out);
+  transition-delay: var(--delay, 0ms);
+}
+.reveal.is-in { opacity: 1; transform: none; }
+
+/* ----- Route fade ----- */
+.route { animation: routeIn 700ms var(--ease-out) both; }
+@keyframes routeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+/* ----- Animated underline ----- */
+.u-line {
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  transition: background-size 500ms var(--ease-out);
+}
+.u-line:hover, .u-line:focus-visible, .u-line.is-active { background-size: 100% 1px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; }
+}

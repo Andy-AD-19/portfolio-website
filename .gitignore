@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.netlify/
+.claude/
+*.log
+.DS_Store
+
+# Source PDF (a web copy lives in public/)
+/Yismalem Awgichew Portfolio.pdf
