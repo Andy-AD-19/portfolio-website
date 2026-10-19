@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { PDF_URL } from '../../data/site';
 import styles from './Contact.module.css';
 
 export default function Contact() {
@@ -39,7 +40,7 @@ export default function Contact() {
               LinkedIn ↗
             </a>
             <a
-              href="/yismalem-awgichew-portfolio.pdf"
+              href={PDF_URL}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.secondaryLink}

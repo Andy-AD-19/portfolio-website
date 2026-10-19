@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { PDF_URL } from '../../data/site';
 import styles from './About.module.css';
 
 interface EntryProps {
@@ -145,7 +146,7 @@ export default function About() {
                 LinkedIn ↗
               </a>
               <a
-                href="/yismalem-awgichew-portfolio.pdf"
+                href={PDF_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${styles.contactLink} ${styles.pdfLink}`}
