@@ -12,6 +12,7 @@ const filters: { key: Filter; label: string }[] = [
   { key: 'educational', label: 'Educational' },
   { key: 'professional', label: 'Professional' },
   { key: 'personal', label: 'Personal' },
+  { key: 'study', label: 'Studies' },
 ];
 
 const count = (f: Filter) => (f === 'all' ? projects.length : projects.filter((p) => p.category === f).length);
@@ -70,6 +71,7 @@ export default function Home() {
             ))}
           </div>
       </section>
+
     </main>
   );
 }

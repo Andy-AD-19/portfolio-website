@@ -27,7 +27,7 @@ function ProjectView({ project }: { project: Project }) {
     ['Year', project.year],
     ['Location', project.location],
     ['Role', project.role],
-  ];
+  ].filter(([, v]) => v);
 
   return (
     <main id="main" className={`${styles.main} route`}>
@@ -50,7 +50,7 @@ function ProjectView({ project }: { project: Project }) {
       </header>
 
       <div className={styles.hero}>
-        <ArchImage src={project.coverImage} alt={project.coverAlt} priority className={styles.heroImg} />
+        <ArchImage src={project.coverImage} alt={project.coverAlt} priority className={`${styles.heroImg} ${project.coverFit === 'contain' ? styles.heroContain : ''}`} />
       </div>
 
       <section className={styles.text} aria-label="Overview">

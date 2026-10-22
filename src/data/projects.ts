@@ -1,7 +1,7 @@
 // src/data/projects.ts
 // Single source of truth for all portfolio project data
 
-export type ProjectCategory = 'educational' | 'professional' | 'personal';
+export type ProjectCategory = 'educational' | 'professional' | 'personal' | 'study';
 
 export interface ProjectImage {
   src: string;
@@ -31,6 +31,8 @@ export interface Project {
   coverAlt: string;
   /** Optional image used only on the home grid; falls back to coverImage. */
   thumbImage?: string;
+  /** Show the whole cover on the project page instead of cropping (for analysis sheets). */
+  coverFit?: 'contain';
   coverAspect: '4/3' | '3/4' | '16/9' | '3/2';
   description: string;
   conceptText?: string;
@@ -336,6 +338,105 @@ export const projects: Project[] = [
           { src: '/images/converging-traditions/form-process.jpg', alt: 'Form development steps', span: 'full', caption: 'Form development' },
           { src: '/images/converging-traditions/elevation.jpg', alt: 'Elevation', span: 'half', caption: 'Elevation' },
           { src: '/images/converging-traditions/plan.jpg', alt: 'Plan', span: 'half', caption: 'Plan' },
+        ],
+      },
+    ],
+  },
+  // ─── STUDIES ─────────────────────────────────────────────────────────────
+  {
+    id: 'climate-analysis',
+    slug: 'climate-analysis',
+    number: 8,
+    title: 'Climate Analysis',
+    subtitle: 'Sun, Radiation and Wind Study in Addis Ababa',
+    category: 'study',
+    categoryLabel: 'Environmental Studies',
+    year: '',
+    location: 'Addis Ababa, Ethiopia',
+    role: 'Environmental Analysis',
+    coverImage: '/images/climate-analysis/direct-sun-hours.jpg',
+    coverAlt: 'Direct sun hours simulation mapped onto the main building',
+    coverAspect: '3/2',
+    description: `Climate data for Addis Ababa was analyzed to understand local temperature patterns and their implications for building comfort. The study examines sun path, solar radiation, direct sun hours and wind around the main building and its surrounding context, providing a basis for climate-responsive design decisions.`,
+    conceptText: `The climate data indicates moderate temperature variation, ranging from approximately 11°C to 25°C. The sun path visualization illustrates seasonal solar movement, informing orientation and shading decisions.`,
+    sections: [
+      {
+        heading: 'Context',
+        body: 'The context model places the main building among surrounding structures of varying positions, establishing the spatial relationship between the building and its neighbours for evaluating effects on solar access and exposure.',
+        images: [
+          { src: '/images/climate-analysis/context.jpg', alt: 'Context model with the main building among surrounding structures', span: 'two-thirds', caption: 'Main building and surrounding context' },
+        ],
+      },
+      {
+        heading: 'Sun Path',
+        images: [
+          { src: '/images/climate-analysis/sun-path.jpg', alt: 'Sun path dome over the site model', span: 'half', caption: 'Sun path' },
+          { src: '/images/climate-analysis/radiation-annual.jpg', alt: 'Sun path diagram coloured by dry bulb temperature', span: 'half', caption: 'Sun path — dry bulb temperature' },
+        ],
+      },
+      {
+        heading: 'Solar Radiation',
+        body: 'Solar radiation was assessed to identify periods and conditions of beneficial and excessive solar exposure, comparing where radiation helps thermal comfort and where it becomes a liability.',
+        images: [
+          { src: '/images/climate-analysis/radiation-benefit.jpg', alt: 'Radiation rose showing beneficial solar radiation', span: 'half', caption: 'Radiation — benefit' },
+          { src: '/images/climate-analysis/radiation-harm.jpg', alt: 'Radiation rose showing harmful solar radiation', span: 'half', caption: 'Radiation — harm' },
+        ],
+      },
+      {
+        heading: 'Direct Sun Hours',
+        body: 'The simulation indicates high direct solar exposure, with the roof approaching the upper end of the scale at 11 hours. This highlights the need to consider roof shading, solar protection and material heat gain.',
+        images: [
+          { src: '/images/climate-analysis/direct-sun-hours.jpg', alt: 'Direct sun hours on the building envelope', span: 'full', caption: 'Direct sun hours' },
+        ],
+      },
+      {
+        heading: 'Wind',
+        body: 'The wind profile shows speed increasing with height, from approximately 1.0 m/s near ground level to over 2.5 m/s at 30 m. Lower levels experience slower airflow due to surface friction.',
+        images: [
+          { src: '/images/climate-analysis/wind-rose.jpg', alt: 'Wind rose showing prevailing wind direction', span: 'half', caption: 'Wind direction' },
+          { src: '/images/climate-analysis/wind-profile.jpg', alt: 'Wind speed profile by height', span: 'half', caption: 'Wind speed by height' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'daylight-analysis',
+    slug: 'daylight-analysis',
+    number: 9,
+    title: 'Annual Daylight Analysis',
+    subtitle: 'Daylight Performance of an Office Room',
+    category: 'study',
+    categoryLabel: 'Building Performance',
+    year: '',
+    location: '',
+    role: 'Daylight Analysis',
+    coverImage: '/images/daylight-analysis/daylight-autonomy-iso.jpg',
+    coverAlt: 'Daylight autonomy mapped across the office floor in isometric view',
+    coverAspect: '3/2',
+    description: `Annual daylight performance was evaluated to assess natural light availability across an office workspace throughout the year. The analysis supports decisions on window design, workstation placement and visual comfort.`,
+    sections: [
+      {
+        heading: 'Room & Apertures',
+        body: 'The office geometry was modeled to examine how its proportions and depth affect daylight distribution at desk level. Window size and placement were then assessed to understand their influence on daylight penetration.',
+        images: [
+          { src: '/images/daylight-analysis/room-model.jpg', alt: 'Office room model', span: 'half', caption: 'Room geometry' },
+          { src: '/images/daylight-analysis/apertures.jpg', alt: 'Office room model showing window apertures', span: 'half', caption: 'Apertures' },
+        ],
+      },
+      {
+        heading: 'Daylight Autonomy',
+        body: 'Daylight Autonomy measures the percentage of occupied hours when daylight meets the selected illuminance target, identifying work areas with sufficient natural light and zones that may need supplementary lighting.',
+        images: [
+          { src: '/images/daylight-analysis/daylight-autonomy-iso.jpg', alt: 'Daylight autonomy results in isometric view', span: 'full', caption: 'Daylight autonomy — isometric' },
+          { src: '/images/daylight-analysis/daylight-autonomy-plan.jpg', alt: 'Daylight autonomy results in plan', span: 'two-thirds', caption: 'Daylight autonomy — plan' },
+        ],
+      },
+      {
+        heading: 'Useful Daylight Illuminance',
+        body: 'The UDI upper threshold identifies areas where daylight exceeds the useful range. In the office, these zones may require further assessment for excessive brightness, glare and solar shading.',
+        images: [
+          { src: '/images/daylight-analysis/udi-iso.jpg', alt: 'UDI upper threshold results in isometric view', span: 'full', caption: 'UDI upper threshold — isometric' },
+          { src: '/images/daylight-analysis/udi-plan.jpg', alt: 'UDI upper threshold results in plan', span: 'two-thirds', caption: 'UDI upper threshold — plan' },
         ],
       },
     ],
