@@ -69,7 +69,7 @@ export const projects: Project[] = [
       {
         heading: 'Site Plan',
         images: [
-          { src: '/images/reclaiming-the-void/site-plan.jpg', alt: 'Site plan with gallery, amphitheater, promenade and quarry lake', span: 'two-thirds', caption: 'Site plan' },
+          { src: '/images/reclaiming-the-void/site-plan.jpg', alt: 'Site plan with legend: main entrance, promenade, garden, visitor pavilion, gallery, quarry lake, amphitheater, bridge and river', span: 'full', caption: 'Site plan' },
           { src: '/images/reclaiming-the-void/aerial.jpg', alt: 'Aerial render of the quarry lake and circular pavilion', span: 'full', caption: 'Aerial view' },
         ],
       },
@@ -78,8 +78,7 @@ export const projects: Project[] = [
         body: 'The upper level serves as the primary entrance, accommodating a restaurant and café. Stone surfaces and glazing connect the interior with the quarry landscape. The middle level houses the main geological exhibition hall — its monolithic form and stone-textured surfaces reflect the geological character of the site. The lower level accommodates administrative functions and reflection spaces, maintaining a quieter connection with the landscape.',
         images: [
           { src: '/images/reclaiming-the-void/section.jpg', alt: 'Longitudinal section through the three gallery levels', span: 'full', caption: 'Longitudinal section' },
-          { src: '/images/reclaiming-the-void/axonometric.jpg', alt: 'Axonometric view of the quarry and gallery', span: 'half', caption: 'Site axonometric' },
-          { src: '/images/reclaiming-the-void/landscape.jpg', alt: 'Axonometric of the upper entrance and landscape', span: 'half', caption: 'Upper entrance' },
+          { src: '/images/reclaiming-the-void/site-model.jpg', alt: 'Site model of the quarry, gallery, viewing decks and upper entrance', span: 'full', caption: 'Site model' },
         ],
       },
       {

@@ -3,7 +3,7 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import ArchImage from '../../components/ArchImage/ArchImage';
 import Reveal from '../../components/Reveal/Reveal';
 import { pad } from '../../components/ProjectCard/ProjectCard';
-import { getProjectBySlug, getNextProject, projects } from '../../data/projects';
+import { getProjectBySlug, projects } from '../../data/projects';
 import type { Project } from '../../data/projects';
 import styles from './ProjectPage.module.css';
 
@@ -15,7 +15,6 @@ const spanClass: Record<string, string> = {
 };
 
 function ProjectView({ project }: { project: Project }) {
-  const next = getNextProject(project.slug);
 
   useEffect(() => {
     document.title = `${project.title} — Yismalem Awgichew`;
@@ -90,16 +89,6 @@ function ProjectView({ project }: { project: Project }) {
           )}
         </section>
       ))}
-
-      <nav aria-label="Next project" className={styles.next}>
-        <Link to={`/work/${next.slug}`} className={styles.nextLink}>
-          <span className={styles.nextLabel}>Next project — {pad(next.number)}</span>
-          <span className={styles.nextTitle}>{next.title} <span aria-hidden="true">→</span></span>
-          <span className={styles.nextImg}>
-            <ArchImage src={next.coverImage} alt="" aspect="21/9" />
-          </span>
-        </Link>
-      </nav>
     </main>
   );
 }

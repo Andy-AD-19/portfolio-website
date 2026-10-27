@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { EMAIL, LINKEDIN, PDF_URL } from '../../data/site';
+import { EMAIL, LINKEDIN, PDF_URL, PHONE, PHONE_DISPLAY } from '../../data/site';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -13,6 +13,7 @@ export default function Footer() {
 
         <div className={styles.cols}>
           <div>
+            <a href={`tel:${PHONE}`} className="u-line">{PHONE_DISPLAY}</a>
             <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="u-line">LinkedIn ↗</a>
             <a href={PDF_URL} target="_blank" rel="noopener noreferrer" className="u-line">PDF Portfolio ↗</a>
           </div>

@@ -44,6 +44,9 @@
 }
 
 .primaryContact {
+  display: grid;
+  justify-items: start;
+  gap: var(--sp-3);
   margin-bottom: var(--sp-8);
 }
 

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { PDF_URL } from '../../data/site';
+import { PDF_URL, PHONE, PHONE_DISPLAY } from '../../data/site';
 import styles from './Contact.module.css';
 
 export default function Contact() {
@@ -27,6 +27,9 @@ export default function Contact() {
           <div className={styles.primaryContact}>
             <a href="mailto:yismalemad@gmail.com" className={styles.emailLink}>
               yismalemad@gmail.com
+            </a>
+            <a href={`tel:${PHONE}`} className={styles.emailLink}>
+              {PHONE_DISPLAY}
             </a>
           </div>
 
