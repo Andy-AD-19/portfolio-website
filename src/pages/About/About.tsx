@@ -153,8 +153,8 @@ export default function About() {
               >
                 Download PDF Portfolio ↗
               </a>
-              <a href={FURNITURE_PDF_URL} className={`${styles.contactLink} ${styles.pdfLink}`} download>
-                Download Furniture Work PDF ↓
+              <a href={FURNITURE_PDF_URL} className={`${styles.contactLink} ${styles.pdfLink}`} target="_blank" rel="noopener noreferrer">
+                Furniture Portfolio ↗
               </a>
             </div>
           </section>

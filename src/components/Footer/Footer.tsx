@@ -16,7 +16,7 @@ export default function Footer() {
             <a href={`tel:${PHONE}`} className="u-line">{PHONE_DISPLAY}</a>
             <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="u-line">LinkedIn ↗</a>
             <a href={PDF_URL} target="_blank" rel="noopener noreferrer" className="u-line">PDF Portfolio ↗</a>
-            <a href={FURNITURE_PDF_URL} className="u-line" download>Furniture Work PDF ↓</a>
+            <a href={FURNITURE_PDF_URL} className="u-line" target="_blank" rel="noopener noreferrer">Furniture Portfolio ↗</a>
           </div>
           <div>
             <p className={styles.head}>Pages</p>

@@ -50,8 +50,8 @@ export default function Contact() {
             >
               PDF Portfolio ↗
             </a>
-            <a href={FURNITURE_PDF_URL} className={styles.secondaryLink} download>
-              Furniture Work PDF ↓
+            <a href={FURNITURE_PDF_URL} className={styles.secondaryLink} target="_blank" rel="noopener noreferrer">
+              Furniture Portfolio ↗
             </a>
           </div>
 

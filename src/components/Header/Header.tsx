@@ -60,8 +60,8 @@ export default function Header() {
                 </a>
               </li>
               <li>
-                <a href={FURNITURE_PDF_URL} className={`${styles.link} u-line`} download>
-                  Furniture PDF ↓
+                <a href={FURNITURE_PDF_URL} className={`${styles.link} u-line`} target="_blank" rel="noopener noreferrer">
+                  Furniture Portfolio ↗
                 </a>
               </li>
             </ul>
@@ -95,8 +95,8 @@ export default function Header() {
               </a>
             </li>
             <li style={{ ['--i' as string]: 4 }}>
-              <a href={FURNITURE_PDF_URL} className={styles.menuLink} tabIndex={open ? 0 : -1} download>
-                <span className={styles.menuNum}>05</span>Furniture ↓
+              <a href={FURNITURE_PDF_URL} className={styles.menuLink} tabIndex={open ? 0 : -1} target="_blank" rel="noopener noreferrer">
+                <span className={styles.menuNum}>05</span>Furniture Portfolio ↗
               </a>
             </li>
           </ul>
