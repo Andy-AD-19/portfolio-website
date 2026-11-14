@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { PDF_URL } from '../../data/site';
+import { PDF_URL, FURNITURE_PDF_URL } from '../../data/site';
 import styles from './About.module.css';
 
 interface EntryProps {
@@ -152,6 +152,9 @@ export default function About() {
                 className={`${styles.contactLink} ${styles.pdfLink}`}
               >
                 Download PDF Portfolio ↗
+              </a>
+              <a href={FURNITURE_PDF_URL} className={`${styles.contactLink} ${styles.pdfLink}`} download>
+                Download Furniture Work PDF ↓
               </a>
             </div>
           </section>

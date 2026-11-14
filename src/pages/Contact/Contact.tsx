@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { PDF_URL, PHONE, PHONE_DISPLAY } from '../../data/site';
+import { PDF_URL, FURNITURE_PDF_URL, PHONE, PHONE_DISPLAY } from '../../data/site';
 import styles from './Contact.module.css';
 
 export default function Contact() {
@@ -49,6 +49,9 @@ export default function Contact() {
               className={styles.secondaryLink}
             >
               PDF Portfolio ↗
+            </a>
+            <a href={FURNITURE_PDF_URL} className={styles.secondaryLink} download>
+              Furniture Work PDF ↓
             </a>
           </div>
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { PDF_URL, EMAIL } from '../../data/site';
+import { PDF_URL, FURNITURE_PDF_URL, EMAIL } from '../../data/site';
 import styles from './Header.module.css';
 
 const links = [
@@ -59,6 +59,11 @@ export default function Header() {
                   PDF Portfolio ↗
                 </a>
               </li>
+              <li>
+                <a href={FURNITURE_PDF_URL} className={`${styles.link} u-line`} download>
+                  Furniture PDF ↓
+                </a>
+              </li>
             </ul>
           </nav>
 
@@ -87,6 +92,11 @@ export default function Header() {
             <li style={{ ['--i' as string]: 3 }}>
               <a href={PDF_URL} target="_blank" rel="noopener noreferrer" className={styles.menuLink} tabIndex={open ? 0 : -1}>
                 <span className={styles.menuNum}>04</span>PDF ↗
+              </a>
+            </li>
+            <li style={{ ['--i' as string]: 4 }}>
+              <a href={FURNITURE_PDF_URL} className={styles.menuLink} tabIndex={open ? 0 : -1} download>
+                <span className={styles.menuNum}>05</span>Furniture ↓
               </a>
             </li>
           </ul>
